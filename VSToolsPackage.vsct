@@ -43,7 +43,13 @@
 				  <CommandName>VS Tools</CommandName>
 			  </Strings>
 		  </Menu>
-		  
+		  <!--<Menu guid="guidVSToolsPackageCmdSet" id="TextCommandsMenu" priority="0x600" type="Menu">
+			  <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" />
+			  <Strings>
+				  <ButtonText>Text Commands</ButtonText>
+				  <CommandName>Text Commands</CommandName>
+			  </Strings>
+		  </Menu>-->
 	  </Menus>
 	  
 	  <Groups>
@@ -53,8 +59,8 @@
       <Group guid="guidVSToolsSquareBraces" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" />
       </Group>
-      <Group guid="guidVSToolsPackageCmdSet1" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+      <Group guid="guidVSToolsCurlyBraces" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" />
       </Group>
     </Groups>
 
@@ -76,16 +82,20 @@
           <ButtonText>Enable/Disable VS Tools</ButtonText>
         </Strings>
       </Button>
+	<Button guid="guidVSToolsTextCommands" id="cmdidTextCommands" priority="0x0100" type="MenuButton">
+        <Parent guid="guidVSToolsTextCommands" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Text Commands</ButtonText>
+        </Strings>
+      </Button>
       <Button guid="guidVSToolsSquareBraces" id="cmdidSquareBraces" priority="0x0100" type="Button">
         <Parent guid="guidVSToolsSquareBraces" id="MyMenuGroup" />
-        <!--<Icon guid="guidImages1" id="bmpPic1" />-->
         <Strings>
           <ButtonText>Insert Square Braces</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidVSToolsPackageCmdSet1" id="cmdidCurlyBraces" priority="0x0100" type="Button">
-        <Parent guid="guidVSToolsPackageCmdSet1" id="MyMenuGroup" />
-        <Icon guid="guidImages2" id="bmpPic1" />
+      <Button guid="guidVSToolsCurlyBraces" id="cmdidCurlyBraces" priority="0x0100" type="Button">
+        <Parent guid="guidVSToolsCurlyBraces" id="MyMenuGroup" />
         <Strings>
           <ButtonText>Invoke CurlyBraces</ButtonText>
         </Strings>
@@ -100,8 +110,6 @@
             inside a button definition. An important aspect of this declaration is that the element id
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
       <Bitmap guid="guidImages" href="Resources\EnableDisableVSTools.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
-      <Bitmap guid="guidImages1" href="Resources\SquareBraces.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
-      <Bitmap guid="guidImages2" href="Resources\CurlyBraces.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
 	  <Bitmap guid="guidVMarkImage" href="Resources\vmark.png" usedList="vmarkPic1" />
     </Bitmaps>
   </Commands>
@@ -115,6 +123,7 @@
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="EnableDisableVSToolsId" value="0x0100" />
       <IDSymbol name="TopLevelMenu" value="0x1021" />
+      <IDSymbol name="TextCommandsMenu" value="0x1030" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{f1169023-e008-4452-8cd7-3d3eec2aaa7a}">
@@ -125,33 +134,25 @@
       <IDSymbol name="bmpPicArrows" value="5" />
       <IDSymbol name="bmpPicStrikethrough" value="6" />
     </GuidSymbol>
+	     
+    <GuidSymbol name="guidVMarkImage" value="{e8355adc-5b1b-45b2-8b03-a76fc449a9ee}">
+      <IDSymbol name="vmarkPic1" value="1" />
+    </GuidSymbol>
   
     <GuidSymbol value="{0040a892-7a77-40ce-bc13-bb6ec1061764}" name="guidVSToolsSquareBraces">
       <IDSymbol value="4128" name="MyMenuGroup" />
       <IDSymbol value="256" name="cmdidSquareBraces" />
     </GuidSymbol>
   
-    <GuidSymbol value="{4c543157-280d-43c4-b5ec-3d2506e853c6}" name="guidImages1">
-      <IDSymbol name="bmpPic1" value="1" />
-      <IDSymbol name="bmpPic2" value="2" />
-      <IDSymbol name="bmpPicSearch" value="3" />
-      <IDSymbol name="bmpPicX" value="4" />
-      <IDSymbol name="bmpPicArrows" value="5" />
-      <IDSymbol name="bmpPicStrikethrough" value="6" />
-    </GuidSymbol>
-  
-    <GuidSymbol value="{0fbf5180-4802-4377-9b01-49e286280b29}" name="guidVSToolsPackageCmdSet1">
+    <GuidSymbol value="{0fbf5180-4802-4377-9b01-49e286280b29}" name="guidVSToolsCurlyBraces">
       <IDSymbol value="4128" name="MyMenuGroup" />
       <IDSymbol value="256" name="cmdidCurlyBraces" />
     </GuidSymbol>
-  
-    <GuidSymbol value="{42a51439-3bf7-4c03-a148-23b4933762ed}" name="guidImages2">
-      <IDSymbol name="bmpPic1" value="1" />
-      <IDSymbol name="bmpPic2" value="2" />
-      <IDSymbol name="bmpPicSearch" value="3" />
-      <IDSymbol name="bmpPicX" value="4" />
-      <IDSymbol name="bmpPicArrows" value="5" />
-      <IDSymbol name="bmpPicStrikethrough" value="6" />
+	  
+      <GuidSymbol value="{A6D5ECC6-3D55-44A8-819E-B5763F676938}" name="guidVSToolsTextCommands">
+      <IDSymbol value="4128" name="MyMenuGroup" />
+      <IDSymbol value="256" name="cmdidTextCommands" />
     </GuidSymbol>
+  
   </Symbols>
 </CommandTable>
