@@ -1,0 +1,3 @@
+Example:
+
+https://michaelscodingspot.com/visual-studio-2017-extension-development-tutorial-part-2-add-menu-item/
