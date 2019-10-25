@@ -108,7 +108,7 @@ namespace Visual_Studio_Tools_C_Sharp
 			textDocument.Selection.Backspace();
 			textDocument.Selection.Text = "}";
 			textDocument.Selection.LineUp(false, 1);
-			textDocument.Selection.NewLine();
+//			textDocument.Selection.NewLine();
 		}
 
 		#endregion

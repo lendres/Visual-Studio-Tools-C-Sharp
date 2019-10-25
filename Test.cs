@@ -16,13 +16,14 @@ namespace Visual_Studio_Tools_C_Sharp
     {
         for (int i = 0; i < 10; i++)
         {
-            double[] testArray = new double 10
-        }
-        {
-
+			double[] testArray = new double[10];
         }
 
-        this.Property3      = this.Property1;
+		for (int i = 0; i < 10; i++)
+		
+
+
+		this.Property3      = this.Property1;
         this.Property1      = this.Property2;
         this.Property2      = this.Property3;
     }

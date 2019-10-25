@@ -110,13 +110,15 @@ namespace Visual_Studio_Tools_C_Sharp
 			commands.Item("Build.BuildSolution").Bindings								= "Global::F7";
 
 			// You're getting in my way you dirty dogs.
-			commands.Item("Edit.IncreaseFilterLevel").Bindings							= "Global::Ctrl+.";
+			commands.Item("Edit.IncreaseFilterLevel").Bindings							= new object[] { };
 			commands.Item("EditorContextMenus.Navigate.GoToContainingBlock").Bindings	= new object[] { };
-					
+			commands.Item("Edit.SelectCurrentWord").Bindings							= new object[] { };
+			
 
 			// Add some additional short cuts.
 			commands.Item("Debug.DisableAllBreakpoints").Bindings						= "Global::Ctrl+E,Ctrl+B";
 			commands.Item("Debug.EnableAllBreakpoints").Bindings						= "Global::Ctrl+D,Ctrl+B";
+			commands.Item("Window.CloseDocumentWindow").Bindings						= "Global::Ctrl+W";
 
 			// Custom.
 			commands.Item("VSTools.InsertSquareBraces").Bindings						= "Text Editor::Alt+[";
