@@ -104,6 +104,12 @@
 		  <ToolTipText>Reverses the code on either side of the equal sign.</ToolTipText>
         </Strings>
       </Button>
+	  <Button guid="guidVSToolsKeyboardShortcuts" id="cmdidSetKeyboardShortcuts" priority="0x0100" type="Button">
+        <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" />
+        <Strings>
+          <ButtonText>Set Keyboard Short Cuts</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
 
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -163,11 +169,15 @@
       <IDSymbol value="4128" name="TextCommandMenuGroup" />
       <IDSymbol value="256" name="cmdidCPointer" />
     </GuidSymbol>
-	  
   
     <GuidSymbol value="{879fc60d-7fa0-41f9-a1e3-4fa762c98502}" name="guidVSToolsReverseEquals">
       <IDSymbol value="4128" name="TextCommandMenuGroup" />
       <IDSymbol value="256" name="cmdidReverseEquals" />
+    </GuidSymbol>
+	  
+    <GuidSymbol value="{6812F808-9F6B-42DD-B98E-E474BA6CD122}" name="guidVSToolsKeyboardShortcuts">
+      <IDSymbol value="4128" name="TopLevelMenuGroup" />
+      <IDSymbol value="256" name="cmdidSetKeyboardShortcuts" />
     </GuidSymbol>
   
   </Symbols>

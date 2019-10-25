@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
-namespace Visual_Studio_Tools_C_Sharp.Commands
+namespace Visual_Studio_Tools_C_Sharp
 {
 	/// <summary>
 	/// Command handler.

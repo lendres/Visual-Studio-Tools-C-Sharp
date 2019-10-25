@@ -67,8 +67,9 @@ namespace Visual_Studio_Tools_C_Sharp
 		    await EnableDisableVSTools.InitializeAsync(this);
 		    await SquareBraces.InitializeAsync(this);
 		    await CurlyBraces.InitializeAsync(this);
-		    await Visual_Studio_Tools_C_Sharp.Commands.CPointer.InitializeAsync(this);
-		    await Visual_Studio_Tools_C_Sharp.Commands.ReverseEquals.InitializeAsync(this);
+		    await CPointer.InitializeAsync(this);
+		    await ReverseEquals.InitializeAsync(this);
+		    await KeyboardShortCuts.InitializeAsync(this);
         }
 
 		#endregion
