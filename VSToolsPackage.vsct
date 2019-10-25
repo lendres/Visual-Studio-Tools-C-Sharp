@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <!--  This is the file that defines the actual layout and type of the commands.
+	<!--  This is the file that defines the actual layout and type of the commands.
         It is divided in different sections (e.g. command definition, command
         placement, ...), with each defining a specific set of properties.
         See the comment before each section for more details about how to
         use it. -->
 
-  <!--  The VSCT compiler (the tool that translates this file into the binary
+	<!--  The VSCT compiler (the tool that translates this file into the binary
         format that VisualStudio will consume) has the ability to run a preprocessor
         on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
         it is possible to define includes and macros with the same syntax used
         in C++ files. Using this ability of the compiler here, we include some files
         defining some of the constants that we will use inside the file. -->
 
-  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
-  <Extern href="stdidcmd.h" />
+	<!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+	<Extern href="stdidcmd.h" />
 
-  <!--This header contains the command ids for the menus provided by the shell. -->
-  <Extern href="vsshlids.h" />
+	<!--This header contains the command ids for the menus provided by the shell. -->
+	<Extern href="vsshlids.h" />
 
-  <!--The Commands section is where commands, menus, and menu groups are defined.
+	<!--The Commands section is where commands, menus, and menu groups are defined.
       This section uses a Guid to identify the package that provides the command defined inside it. -->
-  <Commands package="guidVSToolsPackage">
-    <!-- Inside this section we have different sub-sections: one for the menus, another
+	<Commands package="guidVSToolsPackage">
+		<!-- Inside this section we have different sub-sections: one for the menus, another
     for the menu groups, one for the buttons (the actual commands), one for the combos
     and the last one for the bitmaps used. Each element is identified by a command id that
     is a unique pair of guid and numeric identifier; the guid part of the identifier is usually
@@ -31,154 +31,165 @@
     group; your package should define its own command set in order to avoid collisions
     with command ids defined by other packages. -->
 
-    <!-- In this section you can define new menu groups. A menu group is a container for
+		<!-- In this section you can define new menu groups. A menu group is a container for
          other menus or buttons (commands); from a visual point of view you can see the
          group as the part of a menu contained between two lines. The parent of a group
          must be a menu. -->
-	  <Menus>
-		  <Menu guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" priority="0x700" type="Menu">
-			  <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
-			  <Strings>
-				  <ButtonText>Custom Tools Menu</ButtonText>
-				  <CommandName>VS Tools</CommandName>
-			  </Strings>
-		  </Menu>
-		  <Menu guid="guidVSToolsPackageCmdSet" id="TextCommandsMenu" priority="0x100" type="Menu">
-			  <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" />
-			  <Strings>
-				  <ButtonText>Text Commands</ButtonText>
-				  <CommandName>Text Commands</CommandName>
-			  </Strings>
-		  </Menu>
-	  </Menus>
-	  
-	  <Groups>
-      <Group guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" priority="0x0600">
-        <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" />
-      </Group>
-	  <Group guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" priority="0x0600">
-        <Parent guid="guidVSToolsPackageCmdSet" id="TextCommandsMenu" />
-      </Group>
-    </Groups>
+		<Menus>
+			<Menu guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" priority="0x700" type="Menu">
+				<Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
+				<Strings>
+					<ButtonText>Custom Tools Menu</ButtonText>
+					<CommandName>VS Tools</CommandName>
+				</Strings>
+			</Menu>
+			<Menu guid="guidVSToolsPackageCmdSet" id="TextCommandsMenu" priority="0x100" type="Menu">
+				<Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" />
+				<Strings>
+					<ButtonText>Text Commands</ButtonText>
+					<CommandName>Text Commands</CommandName>
+				</Strings>
+			</Menu>
+		</Menus>
 
-    <!--Buttons section. -->
-    <!--This section defines the elements the user can interact with, like a menu command or a button
+		<Groups>
+			<Group guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" priority="0x0600">
+				<Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" />
+			</Group>
+			<Group guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" priority="0x0600">
+				<Parent guid="guidVSToolsPackageCmdSet" id="TextCommandsMenu" />
+			</Group>
+		</Groups>
+
+		<!--Buttons section. -->
+		<!--This section defines the elements the user can interact with, like a menu command or a button
         or combo box in a toolbar. -->
-    <Buttons>
-      <!--To define a menu group you have to specify its ID, the parent menu and its display priority.
+		<Buttons>
+			<!--To define a menu group you have to specify its ID, the parent menu and its display priority.
           The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
           the CommandFlag node.
           You can add more than one CommandFlag node e.g.:
               <CommandFlag>DefaultInvisible</CommandFlag>
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
-      <!--<Button guid="guidVSToolsPackageCmdSet" id="EnableDisableVSToolsId" priority="0x0100" type="Button">
+			<!--<Button guid="guidVSToolsPackageCmdSet" id="EnableDisableVSToolsId" priority="0x0100" type="Button">
         <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" />
         <Icon guid="guidVMarkImage" id="vmarkPic1" />
         <Strings>
           <ButtonText>Enable/Disable VS Tools</ButtonText>
         </Strings>
       </Button>-->
-      <Button guid="guidVSToolsSquareBraces" id="cmdidSquareBraces" priority="0x0100" type="Button">
-        <Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
-        <Strings>
-          <ButtonText>Insert Square Braces</ButtonText>
-        </Strings>
-      </Button>
-      <Button guid="guidVSToolsCurlyBraces" id="cmdidCurlyBraces" priority="0x0100" type="Button">
-        <Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
-        <Strings>
-          <ButtonText>Insert Curly Braces</ButtonText>
-        </Strings>
-      </Button>
-      <Button guid="guidVSToolsCPointer" id="cmdidCPointer" priority="0x0100" type="Button">
-        <Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
-        <Strings>
-          <ButtonText>Insert C Style Pointer</ButtonText>
-        </Strings>
-      </Button>
-      <Button guid="guidVSToolsReverseEquals" id="cmdidReverseEquals" priority="0x0100" type="Button">
-        <Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
-        <Strings>
-          <ButtonText>Reverse Equals</ButtonText>
-		  <ToolTipText>Reverses the code on either side of the equal sign.</ToolTipText>
-        </Strings>
-      </Button>
-	  <Button guid="guidVSToolsKeyboardShortcuts" id="cmdidSetKeyboardShortcuts" priority="0x0100" type="Button">
-        <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" />
-        <Strings>
-          <ButtonText>Set Keyboard Short Cuts</ButtonText>
-        </Strings>
-      </Button>
-    </Buttons>
+			<Button guid="guidVSToolsSquareBraces" id="cmdidSquareBraces" priority="0x0100" type="Button">
+				<Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
+				<Strings>
+					<ButtonText>Insert Square Braces</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSToolsCurlyBraces" id="cmdidCurlyBraces" priority="0x0100" type="Button">
+				<Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
+				<Strings>
+					<ButtonText>Insert Curly Braces</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSToolsCPointer" id="cmdidCPointer" priority="0x0100" type="Button">
+				<Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
+				<Strings>
+					<ButtonText>Insert C Style Pointer</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSToolsReverseEquals" id="cmdidReverseEquals" priority="0x0100" type="Button">
+				<Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
+				<Strings>
+					<ButtonText>Reverse Equals</ButtonText>
+					<ToolTipText>Reverses the code on either side of the equal sign.</ToolTipText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSToolsKeyboardShortcuts" id="cmdidSetKeyboardShortcuts" priority="0x0100" type="Button">
+				<Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" />
+				<Strings>
+					<ButtonText>Set Keyboard Short Cuts</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
 
-    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
-    <Bitmaps>
-      <!--  The bitmap id is defined in a way that is a little bit different from the others:
+		<!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+		<Bitmaps>
+			<!--  The bitmap id is defined in a way that is a little bit different from the others:
             the declaration starts with a guid for the bitmap strip, then there is the resource id of the
             bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
             inside a button definition. An important aspect of this declaration is that the element id
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
-      <Bitmap guid="guidImages" href="Resources\EnableDisableVSTools.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
-	  <Bitmap guid="guidVMarkImage" href="Resources\vmark.png" usedList="vmarkPic1" />
-    </Bitmaps>
-  </Commands>
+			<Bitmap guid="guidImages" href="Resources\EnableDisableVSTools.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+			<Bitmap guid="guidVMarkImage" href="Resources\vmark.png" usedList="vmarkPic1" />
+		</Bitmaps>
+	</Commands>
 
-  <Symbols>
-    <!-- This is the package guid. -->
-    <GuidSymbol name="guidVSToolsPackage" value="{429c06a7-bbbe-4847-8f3f-ad77cd5ffd15}" />
+	<!--
+		On initial install these may not work if the short cuts are in use elsewhere.  They do not seem to update when Visual studio restarts.
+		Use the KeyBoardShortCuts class to brute force over power the built in commands and install these.
+	-->
+	<KeyBindings>
+		<KeyBinding guid="guidVSToolsSquareBraces"	id="cmdidSquareBraces"	mod1="Alt"						key1="VK_OEM_4"			editor="guidVSStd97"/>
+		<KeyBinding guid="guidVSToolsCurlyBraces"	id="cmdidCurlyBraces"	mod1="Shift"	mod2="Alt"		key1="VK_OEM_4"			editor="guidVSStd97"/>
+		<KeyBinding guid="guidVSToolsCPointer"		id="cmdidCPointer"		mod1="Alt"						key1="VK_OEM_PERIOD"	editor="guidVSStd97"/>
+		<KeyBinding guid="guidVSToolsReverseEquals"	id="cmdidReverseEquals"	mod1="Alt"						key1="VK_OEM_PLUS"		editor="guidVSStd97"/>
+	</KeyBindings>
 
-    <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidVSToolsPackageCmdSet" value="{4748639c-7de1-43c1-af36-c237f5393e73}">
-      <IDSymbol name="TopLevelMenuGroup" value="0x1010" />
-      <IDSymbol name="TopLevelMenu" value="0x1020" />
-      <IDSymbol name="EnableDisableVSToolsId" value="0x1030" />
-      <IDSymbol name="TextCommandMenuGroup" value="0x2010" />
-      <IDSymbol name="TextCommandsMenu" value="0x2020" />
-    </GuidSymbol>
+	<Symbols>
+		<!-- This is the package guid. -->
+		<GuidSymbol name="guidVSToolsPackage" value="{429c06a7-bbbe-4847-8f3f-ad77cd5ffd15}" />
 
-    <GuidSymbol name="guidImages" value="{f1169023-e008-4452-8cd7-3d3eec2aaa7a}">
-      <IDSymbol name="bmpPic1" value="1" />
-      <IDSymbol name="bmpPic2" value="2" />
-      <IDSymbol name="bmpPicSearch" value="3" />
-      <IDSymbol name="bmpPicX" value="4" />
-      <IDSymbol name="bmpPicArrows" value="5" />
-      <IDSymbol name="bmpPicStrikethrough" value="6" />
-    </GuidSymbol>
-	     
-    <GuidSymbol name="guidVMarkImage" value="{e8355adc-5b1b-45b2-8b03-a76fc449a9ee}">
-      <IDSymbol name="vmarkPic1" value="1" />
-    </GuidSymbol>
-	  
-    <GuidSymbol value="{A6D5ECC6-3D55-44A8-819E-B5763F676938}" name="guidVSToolsTextCommands">
-      <IDSymbol value="4128" name="TopLevelMenuGroup" />
-      <IDSymbol value="256" name="cmdidTextCommands" />
-    </GuidSymbol>
-  
-    <GuidSymbol value="{0040a892-7a77-40ce-bc13-bb6ec1061764}" name="guidVSToolsSquareBraces">
-      <IDSymbol value="4128" name="TextCommandMenuGroup" />
-      <IDSymbol value="256" name="cmdidSquareBraces" />
-    </GuidSymbol>
-  
-    <GuidSymbol value="{0fbf5180-4802-4377-9b01-49e286280b29}" name="guidVSToolsCurlyBraces">
-      <IDSymbol value="4128" name="TextCommandMenuGroup" />
-      <IDSymbol value="256" name="cmdidCurlyBraces" />
-    </GuidSymbol>
-	  
-	<GuidSymbol value="{717e6881-6e64-41d1-a3da-400df481c8ff}" name="guidVSToolsCPointer">
-      <IDSymbol value="4128" name="TextCommandMenuGroup" />
-      <IDSymbol value="256" name="cmdidCPointer" />
-    </GuidSymbol>
-  
-    <GuidSymbol value="{879fc60d-7fa0-41f9-a1e3-4fa762c98502}" name="guidVSToolsReverseEquals">
-      <IDSymbol value="4128" name="TextCommandMenuGroup" />
-      <IDSymbol value="256" name="cmdidReverseEquals" />
-    </GuidSymbol>
-	  
-    <GuidSymbol value="{6812F808-9F6B-42DD-B98E-E474BA6CD122}" name="guidVSToolsKeyboardShortcuts">
-      <IDSymbol value="4128" name="TopLevelMenuGroup" />
-      <IDSymbol value="256" name="cmdidSetKeyboardShortcuts" />
-    </GuidSymbol>
-  
-  </Symbols>
+		<!-- This is the guid used to group the menu commands together -->
+		<GuidSymbol name="guidVSToolsPackageCmdSet" value="{4748639c-7de1-43c1-af36-c237f5393e73}">
+			<IDSymbol name="TopLevelMenuGroup" value="0x1010" />
+			<IDSymbol name="TopLevelMenu" value="0x1020" />
+			<IDSymbol name="EnableDisableVSToolsId" value="0x1030" />
+			<IDSymbol name="TextCommandMenuGroup" value="0x2010" />
+			<IDSymbol name="TextCommandsMenu" value="0x2020" />
+		</GuidSymbol>
+
+		<GuidSymbol name="guidImages" value="{f1169023-e008-4452-8cd7-3d3eec2aaa7a}">
+			<IDSymbol name="bmpPic1" value="1" />
+			<IDSymbol name="bmpPic2" value="2" />
+			<IDSymbol name="bmpPicSearch" value="3" />
+			<IDSymbol name="bmpPicX" value="4" />
+			<IDSymbol name="bmpPicArrows" value="5" />
+			<IDSymbol name="bmpPicStrikethrough" value="6" />
+		</GuidSymbol>
+
+		<GuidSymbol name="guidVMarkImage" value="{e8355adc-5b1b-45b2-8b03-a76fc449a9ee}">
+			<IDSymbol name="vmarkPic1" value="1" />
+		</GuidSymbol>
+
+		<GuidSymbol value="{A6D5ECC6-3D55-44A8-819E-B5763F676938}" name="guidVSToolsTextCommands">
+			<IDSymbol value="4128" name="TopLevelMenuGroup" />
+			<IDSymbol value="256" name="cmdidTextCommands" />
+		</GuidSymbol>
+
+		<GuidSymbol value="{0040a892-7a77-40ce-bc13-bb6ec1061764}" name="guidVSToolsSquareBraces">
+			<IDSymbol value="4128" name="TextCommandMenuGroup" />
+			<IDSymbol value="256" name="cmdidSquareBraces" />
+		</GuidSymbol>
+
+		<GuidSymbol value="{0fbf5180-4802-4377-9b01-49e286280b29}" name="guidVSToolsCurlyBraces">
+			<IDSymbol value="4128" name="TextCommandMenuGroup" />
+			<IDSymbol value="256" name="cmdidCurlyBraces" />
+		</GuidSymbol>
+
+		<GuidSymbol value="{717e6881-6e64-41d1-a3da-400df481c8ff}" name="guidVSToolsCPointer">
+			<IDSymbol value="4128" name="TextCommandMenuGroup" />
+			<IDSymbol value="256" name="cmdidCPointer" />
+		</GuidSymbol>
+
+		<GuidSymbol value="{879fc60d-7fa0-41f9-a1e3-4fa762c98502}" name="guidVSToolsReverseEquals">
+			<IDSymbol value="4128" name="TextCommandMenuGroup" />
+			<IDSymbol value="256" name="cmdidReverseEquals" />
+		</GuidSymbol>
+
+		<GuidSymbol value="{6812F808-9F6B-42DD-B98E-E474BA6CD122}" name="guidVSToolsKeyboardShortcuts">
+			<IDSymbol value="4128" name="TopLevelMenuGroup" />
+			<IDSymbol value="256" name="cmdidSetKeyboardShortcuts" />
+		</GuidSymbol>
+
+	</Symbols>
 </CommandTable>

@@ -73,5 +73,6 @@ namespace Visual_Studio_Tools_C_Sharp
         }
 
 		#endregion
-	}
-}
+
+	} // End class.
+} // End namespace.

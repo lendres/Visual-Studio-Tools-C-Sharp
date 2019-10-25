@@ -103,8 +103,26 @@ namespace Visual_Studio_Tools_C_Sharp
 		{
 			ThreadHelper.ThrowIfNotOnUIThread();
 
-			TextDocument textDocument = VSTools.GetTextDocument();
+			DTE dte				= Package.GetGlobalService(typeof(DTE)) as DTE;
+			Commands commands	= dte.Commands;
 
+			// F7 for build.
+			commands.Item("Build.BuildSolution").Bindings								= "Global::F7";
+
+			// You're getting in my way you dirty dogs.
+			commands.Item("Edit.IncreaseFilterLevel").Bindings							= "Global::Ctrl+.";
+			commands.Item("EditorContextMenus.Navigate.GoToContainingBlock").Bindings	= new object[] { };
+					
+
+			// Add some additional short cuts.
+			commands.Item("Debug.DisableAllBreakpoints").Bindings						= "Global::Ctrl+E,Ctrl+B";
+			commands.Item("Debug.EnableAllBreakpoints").Bindings						= "Global::Ctrl+D,Ctrl+B";
+
+			// Custom.
+			commands.Item("VSTools.InsertSquareBraces").Bindings						= "Text Editor::Alt+[";
+			commands.Item("VSTools.InsertCurlyBraces").Bindings                         = "Text Editor::Shift+Alt+[";
+			commands.Item("VSTools.InsertCStylePointer").Bindings						= "Text Editor::Alt+.";
+			commands.Item("VSTools.ReverseEquals").Bindings								= "Text Editor::Alt+=";
 		}
 
 		#endregion
