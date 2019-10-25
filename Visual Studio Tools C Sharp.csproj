@@ -54,10 +54,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Commands\CPointer.cs" />
     <Compile Include="Commands\CurlyBraces.cs" />
+    <Compile Include="Commands\ReverseEquals.cs" />
     <Compile Include="EnableDisableVSTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\SquareBraces.cs" />
+    <Compile Include="VSTools.cs" />
     <Compile Include="VSToolsPackage.cs" />
     <Compile Include="GeneralSettings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -78,7 +81,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.html" />
+    <Content Include="Commands\Resources\ReverseEquals.png" />
+    <Content Include="Resources\CPointer.png" />
     <Content Include="Resources\CurlyBraces.png" />
     <Content Include="Resources\EnableDisableVSTools.png" />
     <Content Include="Resources\SquareBraces.png" />

@@ -43,24 +43,21 @@
 				  <CommandName>VS Tools</CommandName>
 			  </Strings>
 		  </Menu>
-		  <!--<Menu guid="guidVSToolsPackageCmdSet" id="TextCommandsMenu" priority="0x600" type="Menu">
-			  <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" />
+		  <Menu guid="guidVSToolsPackageCmdSet" id="TextCommandsMenu" priority="0x100" type="Menu">
+			  <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" />
 			  <Strings>
 				  <ButtonText>Text Commands</ButtonText>
 				  <CommandName>Text Commands</CommandName>
 			  </Strings>
-		  </Menu>-->
+		  </Menu>
 	  </Menus>
 	  
 	  <Groups>
-      <Group guid="guidVSToolsPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Group guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" priority="0x0600">
         <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" />
       </Group>
-      <Group guid="guidVSToolsSquareBraces" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" />
-      </Group>
-      <Group guid="guidVSToolsCurlyBraces" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenu" />
+	  <Group guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" priority="0x0600">
+        <Parent guid="guidVSToolsPackageCmdSet" id="TextCommandsMenu" />
       </Group>
     </Groups>
 
@@ -75,29 +72,36 @@
               <CommandFlag>DefaultInvisible</CommandFlag>
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
-      <Button guid="guidVSToolsPackageCmdSet" id="EnableDisableVSToolsId" priority="0x0100" type="Button">
-        <Parent guid="guidVSToolsPackageCmdSet" id="MyMenuGroup" />
+      <!--<Button guid="guidVSToolsPackageCmdSet" id="EnableDisableVSToolsId" priority="0x0100" type="Button">
+        <Parent guid="guidVSToolsPackageCmdSet" id="TopLevelMenuGroup" />
         <Icon guid="guidVMarkImage" id="vmarkPic1" />
         <Strings>
           <ButtonText>Enable/Disable VS Tools</ButtonText>
         </Strings>
-      </Button>
-	<Button guid="guidVSToolsTextCommands" id="cmdidTextCommands" priority="0x0100" type="MenuButton">
-        <Parent guid="guidVSToolsTextCommands" id="MyMenuGroup" />
-        <Strings>
-          <ButtonText>Text Commands</ButtonText>
-        </Strings>
-      </Button>
+      </Button>-->
       <Button guid="guidVSToolsSquareBraces" id="cmdidSquareBraces" priority="0x0100" type="Button">
-        <Parent guid="guidVSToolsSquareBraces" id="MyMenuGroup" />
+        <Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
         <Strings>
           <ButtonText>Insert Square Braces</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidVSToolsCurlyBraces" id="cmdidCurlyBraces" priority="0x0100" type="Button">
-        <Parent guid="guidVSToolsCurlyBraces" id="MyMenuGroup" />
+        <Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
         <Strings>
-          <ButtonText>Invoke CurlyBraces</ButtonText>
+          <ButtonText>Insert Curly Braces</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVSToolsCPointer" id="cmdidCPointer" priority="0x0100" type="Button">
+        <Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
+        <Strings>
+          <ButtonText>Insert C Style Pointer</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVSToolsReverseEquals" id="cmdidReverseEquals" priority="0x0100" type="Button">
+        <Parent guid="guidVSToolsPackageCmdSet" id="TextCommandMenuGroup" />
+        <Strings>
+          <ButtonText>Reverse Equals</ButtonText>
+		  <ToolTipText>Reverses the code on either side of the equal sign.</ToolTipText>
         </Strings>
       </Button>
     </Buttons>
@@ -120,10 +124,11 @@
 
     <!-- This is the guid used to group the menu commands together -->
     <GuidSymbol name="guidVSToolsPackageCmdSet" value="{4748639c-7de1-43c1-af36-c237f5393e73}">
-      <IDSymbol name="MyMenuGroup" value="0x1020" />
-      <IDSymbol name="EnableDisableVSToolsId" value="0x0100" />
-      <IDSymbol name="TopLevelMenu" value="0x1021" />
-      <IDSymbol name="TextCommandsMenu" value="0x1030" />
+      <IDSymbol name="TopLevelMenuGroup" value="0x1010" />
+      <IDSymbol name="TopLevelMenu" value="0x1020" />
+      <IDSymbol name="EnableDisableVSToolsId" value="0x1030" />
+      <IDSymbol name="TextCommandMenuGroup" value="0x2010" />
+      <IDSymbol name="TextCommandsMenu" value="0x2020" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{f1169023-e008-4452-8cd7-3d3eec2aaa7a}">
@@ -138,20 +143,31 @@
     <GuidSymbol name="guidVMarkImage" value="{e8355adc-5b1b-45b2-8b03-a76fc449a9ee}">
       <IDSymbol name="vmarkPic1" value="1" />
     </GuidSymbol>
+	  
+    <GuidSymbol value="{A6D5ECC6-3D55-44A8-819E-B5763F676938}" name="guidVSToolsTextCommands">
+      <IDSymbol value="4128" name="TopLevelMenuGroup" />
+      <IDSymbol value="256" name="cmdidTextCommands" />
+    </GuidSymbol>
   
     <GuidSymbol value="{0040a892-7a77-40ce-bc13-bb6ec1061764}" name="guidVSToolsSquareBraces">
-      <IDSymbol value="4128" name="MyMenuGroup" />
+      <IDSymbol value="4128" name="TextCommandMenuGroup" />
       <IDSymbol value="256" name="cmdidSquareBraces" />
     </GuidSymbol>
   
     <GuidSymbol value="{0fbf5180-4802-4377-9b01-49e286280b29}" name="guidVSToolsCurlyBraces">
-      <IDSymbol value="4128" name="MyMenuGroup" />
+      <IDSymbol value="4128" name="TextCommandMenuGroup" />
       <IDSymbol value="256" name="cmdidCurlyBraces" />
     </GuidSymbol>
 	  
-      <GuidSymbol value="{A6D5ECC6-3D55-44A8-819E-B5763F676938}" name="guidVSToolsTextCommands">
-      <IDSymbol value="4128" name="MyMenuGroup" />
-      <IDSymbol value="256" name="cmdidTextCommands" />
+	<GuidSymbol value="{717e6881-6e64-41d1-a3da-400df481c8ff}" name="guidVSToolsCPointer">
+      <IDSymbol value="4128" name="TextCommandMenuGroup" />
+      <IDSymbol value="256" name="cmdidCPointer" />
+    </GuidSymbol>
+	  
+  
+    <GuidSymbol value="{879fc60d-7fa0-41f9-a1e3-4fa762c98502}" name="guidVSToolsReverseEquals">
+      <IDSymbol value="4128" name="TextCommandMenuGroup" />
+      <IDSymbol value="256" name="cmdidReverseEquals" />
     </GuidSymbol>
   
   </Symbols>

@@ -7,7 +7,7 @@ using Task = System.Threading.Tasks.Task;
 namespace Visual_Studio_Tools_C_Sharp
 {
 	/// <summary>
-	/// Command handler
+	/// Command handler.
 	/// </summary>
 	internal sealed class CurlyBraces
 	{
@@ -96,14 +96,19 @@ namespace Visual_Studio_Tools_C_Sharp
 		/// OleMenuCommandService service and MenuCommand class.
 		/// </summary>
 		/// <param name="sender">Event sender.</param>
-		/// <param name="e">Event args.</param>
-		private void Execute(object sender, EventArgs e)
+		/// <param name="eventArgs">Event args.</param>
+		private void Execute(object sender, EventArgs eventArgs)
 		{
 			ThreadHelper.ThrowIfNotOnUIThread();
 
-			DTE dte = Package.GetGlobalService(typeof(DTE)) as DTE;
-			Document document = dte.ActiveDocument;
-			TextDocument textDocument = document.Object() as TextDocument;
+			TextDocument textDocument = VSTools.GetTextDocument();
+
+			textDocument.Selection.Text = "{";
+			textDocument.Selection.NewLine();
+			textDocument.Selection.Backspace();
+			textDocument.Selection.Text = "}";
+			textDocument.Selection.LineUp(false, 1);
+			textDocument.Selection.NewLine();
 		}
 
 		#endregion
