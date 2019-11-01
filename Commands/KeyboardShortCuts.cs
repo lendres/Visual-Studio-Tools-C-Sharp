@@ -113,12 +113,12 @@ namespace Visual_Studio_Tools_C_Sharp
 			commands.Item("Edit.IncreaseFilterLevel").Bindings							= new object[] { };
 			commands.Item("EditorContextMenus.Navigate.GoToContainingBlock").Bindings	= new object[] { };
 			commands.Item("Edit.SelectCurrentWord").Bindings							= new object[] { };
-			
 
 			// Add some additional short cuts.
 			commands.Item("Debug.DisableAllBreakpoints").Bindings						= "Global::Ctrl+E,Ctrl+B";
 			commands.Item("Debug.EnableAllBreakpoints").Bindings						= "Global::Ctrl+D,Ctrl+B";
 			commands.Item("Window.CloseDocumentWindow").Bindings						= "Global::Ctrl+W";
+			commands.Item("View.EditLabel").Bindings									= "Global::F2";
 
 			// Custom.
 			commands.Item("VSTools.InsertSquareBraces").Bindings						= "Text Editor::Alt+[";
