@@ -54,11 +54,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Class\Class.cs" />
     <Compile Include="Commands\CPointer.cs" />
     <Compile Include="Commands\CurlyBraces.cs" />
     <Compile Include="Commands\KeyboardShortCuts.cs" />
     <Compile Include="Commands\ReverseEquals.cs" />
     <Compile Include="Commands\EnableDisableVSTools.cs" />
+    <Content Include="Enum\Enum.cs" />
+    <Content Include="FixedDialogForm\FixedDialogForm.cs" />
+    <Content Include="FixedDialogForm\FixedDialogForm.Designer.cs">
+      <DependentUpon>FixedDialogForm.cs</DependentUpon>
+    </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\SquareBraces.cs" />
     <Compile Include="VSTools.cs" />
@@ -82,6 +88,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Class\Class.vstemplate" />
+    <Content Include="Enum\Enum.vstemplate" />
+    <Content Include="Enum\__TemplateIcon.ico" />
+    <Content Include="FixedDialogForm\FixedDialogForm.vstemplate" />
+    <Content Include="FixedDialogForm\__TemplateIcon.ico" />
+    <Content Include="Notes.txt" />
     <Content Include="Resources\EnableDisableVSTools.png" />
     <Content Include="Resources\vmark.png" />
     <Content Include="Resources\VSToolsPackage.ico" />
@@ -182,6 +194,9 @@
     <Analyzer Include="packages\Microsoft.VisualStudio.Threading.Analyzers.15.8.122\analyzers\cs\Microsoft.VisualStudio.Threading.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FixedDialogForm\FixedDialogForm.resx">
+      <DependentUpon>FixedDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VSPackage.resx">
       <MergeWithCTO>true</MergeWithCTO>
       <ManifestResourceName>VSPackage</ManifestResourceName>

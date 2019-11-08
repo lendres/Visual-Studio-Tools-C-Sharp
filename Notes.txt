@@ -1,3 +1,11 @@
 Example:
 
 https://michaelscodingspot.com/visual-studio-2017-extension-development-tutorial-part-2-add-menu-item/
+
+
+
+Template Items Installation:
+https://stackoverflow.com/questions/2072687/how-do-i-edit-the-visual-studio-templates-for-new-c-sharp-class-interface
+
+2017
+C:\Users\lendres\Documents\Visual Studio 2017\Templates\ItemTemplates\Visual C#
