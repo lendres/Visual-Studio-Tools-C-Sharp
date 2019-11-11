@@ -43,8 +43,8 @@ namespace Visual_Studio_Tools_C_Sharp
 			this.package = package ?? throw new ArgumentNullException(nameof(package));
 			commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
 
-			var menuCommandID = new CommandID(CommandSet, CommandId);
-			var menuItem = new MenuCommand(this.Execute, menuCommandID);
+			CommandID menuCommandID	= new CommandID(CommandSet, CommandId);
+			MenuCommand menuItem	= new MenuCommand(this.Execute, menuCommandID);
 			commandService.AddCommand(menuItem);
 		}
 

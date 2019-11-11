@@ -34,7 +34,9 @@ namespace $rootnamespace$
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public $safeitemrootname$() {}
+		public $safeitemrootname$()
+		{
+		}
 
 		#endregion
 
