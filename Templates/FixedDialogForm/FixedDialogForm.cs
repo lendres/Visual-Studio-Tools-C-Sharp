@@ -42,10 +42,21 @@ namespace $rootnamespace$
 		/// Ok button event handler.
 		/// </summary>
 		/// <param name="sender">Sender.</param>
-		/// <param name="e">Event arguments.</param>
-		private void buttonOK_Click(object sender, EventArgs e)
+		/// <param name="eventArgs">Event arguments.</param>
+		private void buttonOK_Click(object sender, EventArgs eventArgs)
 		{
 			// TODO: Validation code goes here.
+
+			// Ensure the data is valid.
+			if (!ValidateChildren())
+			{
+				// Tell the user to fix the errors.
+				MessageBox.Show(this, "Errors exist on the form.", "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				// Have to set the DialogResult to none to prevent the form from closing.
+				this.DialogResult = DialogResult.None;
+				return;
+			}
 
 			PushEntriesToDataStructure();
 		}

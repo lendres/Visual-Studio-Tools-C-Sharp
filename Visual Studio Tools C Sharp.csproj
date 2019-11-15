@@ -54,19 +54,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Class\Class.cs" />
+    <Content Include="Templates\Class\Class.cs" />
     <Compile Include="Commands\CPointer.cs" />
     <Compile Include="Commands\CurlyBraces.cs" />
     <Compile Include="Commands\KeyboardShortCuts.cs" />
     <Compile Include="Commands\ReverseEquals.cs" />
     <Compile Include="Commands\EnableDisableVSTools.cs" />
-    <Content Include="Enum\Enum.cs" />
-    <Content Include="FixedDialogForm\FixedDialogForm.cs" />
-    <Content Include="FixedDialogForm\FixedDialogForm.Designer.cs">
+    <Content Include="Templates\Enum\Enum.cs" />
+    <Content Include="Templates\FixedDialogForm\FixedDialogForm.cs" />
+    <Content Include="Templates\FixedDialogForm\FixedDialogForm.Designer.cs">
       <DependentUpon>FixedDialogForm.cs</DependentUpon>
     </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\SquareBraces.cs" />
+    <Content Include="Test.cs.txt" />
     <Compile Include="VSTools.cs" />
     <Compile Include="VSToolsPackage.cs" />
     <Compile Include="GeneralSettings.Designer.cs">
@@ -88,11 +89,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Class\Class.vstemplate" />
-    <Content Include="Enum\Enum.vstemplate" />
-    <Content Include="Enum\__TemplateIcon.ico" />
-    <Content Include="FixedDialogForm\FixedDialogForm.vstemplate" />
-    <Content Include="FixedDialogForm\__TemplateIcon.ico" />
+    <Content Include="Templates\Class\Class.vstemplate" />
+    <Content Include="Templates\Enum\Enum.vstemplate" />
+    <Content Include="Templates\Enum\__TemplateIcon.ico" />
+    <Content Include="Templates\FixedDialogForm\FixedDialogForm.vstemplate" />
+    <Content Include="Templates\FixedDialogForm\__TemplateIcon.ico" />
     <Content Include="Notes.txt" />
     <Content Include="Resources\EnableDisableVSTools.png" />
     <Content Include="Resources\vmark.png" />
@@ -194,7 +195,7 @@
     <Analyzer Include="packages\Microsoft.VisualStudio.Threading.Analyzers.15.8.122\analyzers\cs\Microsoft.VisualStudio.Threading.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FixedDialogForm\FixedDialogForm.resx">
+    <EmbeddedResource Include="Templates\FixedDialogForm\FixedDialogForm.resx">
       <DependentUpon>FixedDialogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VSPackage.resx">
