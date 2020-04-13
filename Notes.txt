@@ -9,3 +9,9 @@ https://stackoverflow.com/questions/2072687/how-do-i-edit-the-visual-studio-temp
 
 2017
 C:\Users\lendres\Documents\Visual Studio 2017\Templates\ItemTemplates\Visual C#
+
+
+
+
+https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/commands-menus-and-toolbars?view=vs-2019
+https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/how-vspackages-add-user-interface-elements?view=vs-2019

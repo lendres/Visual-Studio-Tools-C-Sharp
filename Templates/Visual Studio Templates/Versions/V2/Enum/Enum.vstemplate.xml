@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+		<Name>Enum</Name>
+		<Description>Enumeration template.</Description>
+		<Icon>__TemplateIcon.ico</Icon>
+		<TemplateID>Microsoft.CSharp.Enum</TemplateID>
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>90</SortOrder>
+		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<DefaultName>Enum.cs</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<References>
+			<Reference>
+				<Assembly>System</Assembly>
+			</Reference>
+		</References>
+
+		<ProjectItem ReplaceParameters="true">Enum.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
