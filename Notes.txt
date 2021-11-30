@@ -9,6 +9,7 @@ https://stackoverflow.com/questions/2072687/how-do-i-edit-the-visual-studio-temp
 
 2017
 C:\Users\lendres\Documents\Visual Studio 2017\Templates\ItemTemplates\Visual C#
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\ItemTemplates\CSharp\Code\1033
 
 
 
