@@ -54,12 +54,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Templates\Class\Class.cs" />
     <Compile Include="Commands\CPointer.cs" />
     <Compile Include="Commands\CurlyBraces.cs" />
     <Compile Include="Commands\KeyboardShortCuts.cs" />
     <Compile Include="Commands\ReverseEquals.cs" />
     <Compile Include="Commands\EnableDisableVSTools.cs" />
+    <Content Include="Templates\CustomClass\CustomClass.vstemplate" />
+    <Content Include="Templates\CustomControl\CustomControl.vstemplate" />
     <Content Include="Templates\Enum\Enum.cs" />
     <Content Include="Templates\FixedDialogForm\FixedDialogForm.cs" />
     <Content Include="Templates\FixedDialogForm\FixedDialogForm.Designer.cs">
@@ -68,6 +69,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\SquareBraces.cs" />
     <Content Include="Test.cs.txt" />
+    <Compile Include="Templates\CustomClass\CustomClass.cs" />
+    <Compile Include="Templates\CustomControl\CustomControl.cs" />
+    <Compile Include="Templates\CustomControl\CustomControl.Designer.cs">
+      <DependentUpon>CustomControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="VSTools.cs" />
     <Compile Include="VSToolsPackage.cs" />
     <Compile Include="GeneralSettings.Designer.cs">
@@ -89,7 +95,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Templates\Class\Class.vstemplate" />
     <Content Include="Templates\Enum\Enum.vstemplate" />
     <Content Include="Templates\Enum\__TemplateIcon.ico" />
     <Content Include="Templates\FixedDialogForm\FixedDialogForm.vstemplate" />
@@ -195,6 +200,9 @@
     <Analyzer Include="packages\Microsoft.VisualStudio.Threading.Analyzers.15.8.122\analyzers\cs\Microsoft.VisualStudio.Threading.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Templates\CustomControl\CustomControl.resx">
+      <DependentUpon>CustomControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Templates\FixedDialogForm\FixedDialogForm.resx">
       <DependentUpon>FixedDialogForm.cs</DependentUpon>
     </EmbeddedResource>

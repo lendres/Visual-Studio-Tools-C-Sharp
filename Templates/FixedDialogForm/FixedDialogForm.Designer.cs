@@ -2,10 +2,20 @@
 {
 	partial class $safeitemname$
 	{
+
+		#region Members
+
+		private System.Windows.Forms.Button buttonCancel;
+		private System.Windows.Forms.Button buttonOK;
+
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
+
+		#endregion
+
+		#region Disposing
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -19,6 +29,8 @@
 			}
 			base.Dispose(disposing);
 		}
+
+		#endregion
 
 		#region Windows Form Designer generated code
 
@@ -75,7 +87,5 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button buttonCancel;
-		private System.Windows.Forms.Button buttonOK;
-	}
-}
+	} // End class.
+} // End namespace.
