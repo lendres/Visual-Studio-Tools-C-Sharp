@@ -24,6 +24,10 @@ namespace $rootnamespace$
 			InitializeComponent();
 		}
 
+		#endregion
+
+		#region Properties
+
 		/// <summary>
 		/// Use this to add a property to the designer.
 		/// </summary>
@@ -33,10 +37,6 @@ namespace $rootnamespace$
 		//	get => ;
 		//	set =>  = value;
 		//}
-
-		#endregion
-
-		#region Properties
 
 		#endregion
 
