@@ -14,7 +14,7 @@ namespace $rootnamespace$
 	/// </summary>
 	public partial class $safeitemname$ : Form
 	{
-		#region Members
+		#region Fields
 
 		#endregion
 

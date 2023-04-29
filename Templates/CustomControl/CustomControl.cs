@@ -12,7 +12,7 @@ namespace $rootnamespace$
 {
 	public partial class $safeitemname$ : UserControl
 	{
-		#region Members
+		#region Fields
 
 
 		#endregion

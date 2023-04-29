@@ -25,7 +25,7 @@ namespace $rootnamespace$
 
 		#endregion
 
-		#region Members
+		#region Fields
 
 		#endregion
 
