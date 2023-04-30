@@ -2,11 +2,10 @@
 {
 	partial class $safeitemname$
 	{
-
 		#region Members
 
-		private System.Windows.Forms.Button buttonCancel;
-		private System.Windows.Forms.Button buttonOK;
+		private System.Windows.Forms.Button cancelButton;
+		private System.Windows.Forms.Button okButton;
 
 		/// <summary>
 		/// Required designer variable.
@@ -40,8 +39,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.buttonCancel = new System.Windows.Forms.Button();
-			this.buttonOK = new System.Windows.Forms.Button();
+			this.cancelButton = new System.Windows.Forms.Button();
+			this.okButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// buttonCancel
@@ -49,7 +48,7 @@
 			this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.buttonCancel.Location = new System.Drawing.Point(373, 227);
-			this.buttonCancel.Name = "buttonCancel";
+			this.buttonCancel.Name = "cancelButton";
 			this.buttonCancel.Size = new System.Drawing.Size(80, 23);
 			this.buttonCancel.TabIndex = 25;
 			this.buttonCancel.Text = "&Cancel";
@@ -60,7 +59,7 @@
 			this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.buttonOK.Location = new System.Drawing.Point(275, 227);
-			this.buttonOK.Name = "buttonOK";
+			this.buttonOK.Name = "okButton";
 			this.buttonOK.Size = new System.Drawing.Size(80, 23);
 			this.buttonOK.TabIndex = 24;
 			this.buttonOK.Text = "&OK";
@@ -69,13 +68,13 @@
 			// 
 			// $safeitemname$
 			// 
-			this.AcceptButton = this.buttonOK;
+			this.AcceptButton = this.okButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.CancelButton = this.buttonCancel;
+			this.CancelButton = this.cancelButton;
 			this.ClientSize = new System.Drawing.Size(465, 262);
-			this.Controls.Add(this.buttonCancel);
-			this.Controls.Add(this.buttonOK);
+			this.Controls.Add(this.cancelButton);
+			this.Controls.Add(this.okButton);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;

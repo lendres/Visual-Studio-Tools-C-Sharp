@@ -43,7 +43,7 @@ namespace $rootnamespace$
 		/// </summary>
 		/// <param name="sender">Sender.</param>
 		/// <param name="eventArgs">Event arguments.</param>
-		private void buttonOK_Click(object sender, EventArgs eventArgs)
+		private void OkButton_Click(object sender, EventArgs eventArgs)
 		{
 			// TODO: Validation code goes here.
 
