@@ -1,6 +1,6 @@
-﻿namespace $rootnamespace$
+﻿namespace BibtexManager.Forms
 {
-	partial class $safeitemname$
+	partial class FindEntryForm
 	{
 		#region Members
 
@@ -43,30 +43,30 @@
 			this.okButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
-			// buttonCancel
+			// cancelButton
 			// 
-			this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.buttonCancel.Location = new System.Drawing.Point(373, 227);
-			this.buttonCancel.Name = "cancelButton";
-			this.buttonCancel.Size = new System.Drawing.Size(80, 23);
-			this.buttonCancel.TabIndex = 25;
-			this.buttonCancel.Text = "&Cancel";
-			this.buttonCancel.UseVisualStyleBackColor = true;
+			this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.cancelButton.Location = new System.Drawing.Point(373, 227);
+			this.cancelButton.Name = "cancelButton";
+			this.cancelButton.Size = new System.Drawing.Size(80, 23);
+			this.cancelButton.TabIndex = 25;
+			this.cancelButton.Text = "&Cancel";
+			this.cancelButton.UseVisualStyleBackColor = true;
 			// 
-			// buttonOK
+			// okButton
 			// 
-			this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.buttonOK.Location = new System.Drawing.Point(275, 227);
-			this.buttonOK.Name = "okButton";
-			this.buttonOK.Size = new System.Drawing.Size(80, 23);
-			this.buttonOK.TabIndex = 24;
-			this.buttonOK.Text = "&OK";
-			this.buttonOK.UseVisualStyleBackColor = true;
-			this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+			this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.okButton.Location = new System.Drawing.Point(275, 227);
+			this.okButton.Name = "okButton";
+			this.okButton.Size = new System.Drawing.Size(80, 23);
+			this.okButton.TabIndex = 24;
+			this.okButton.Text = "&OK";
+			this.okButton.UseVisualStyleBackColor = true;
+			this.okButton.Click += new System.EventHandler(this.OkButton_Click);
 			// 
-			// $safeitemname$
+			// FindEntryForm
 			// 
 			this.AcceptButton = this.okButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -78,7 +78,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "$safeitemname$";
+			this.Name = "FindEntryForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.ResumeLayout(false);
 
